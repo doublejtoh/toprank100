@@ -1,0 +1,2 @@
+module ToprankHelper
+end

@@ -1,0 +1,28 @@
+
+<div class="container pt-5 mb-5" style="text-align: center">
+  <h1>챌린저유저 정보 게시판</h1>
+  
+</div>
+<div class="container my-5">
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>순위</th>
+      <th>소환사명</th>
+      <th>점수</th>
+      <th>승률</th>
+    </tr>
+  </thead>
+  <tbody>
+      
+      <% @summoners.each do |x| %>
+        <tr>
+          <td><%=x.id%>위</td>
+          <td><a href="/showinfo/<%=x.id%>"><%=x.summonerName%></a></td>
+          <td><%=x.lp%></td>
+          <td><%=x.winrate%></td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>
+</div>

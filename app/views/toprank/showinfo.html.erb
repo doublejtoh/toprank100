@@ -1,0 +1,32 @@
+<div class="container pt-5 mb-5" style="text-align: center">
+    <h1><%=@summoner.summonerName%>님의 정보</h1>
+    
+</div>
+<div class="container my-5">
+    
+    <% @summonerinfo.each do |x| %>
+        <textarea class="form-control" id="exampleTextarea" rows="3" name="content"><%= x.summonerInfo %></textarea><br>        
+        <a href= "/edit_info/<%=x.id%>">[게시물 수정]</a>
+        <a href= "/destroy_info/<%=x.id%>/<%=@summoner.id%>">[게시물 삭제]</a>
+        
+         <hr>
+    <% end %>
+    
+</div>
+
+<div class="container my-5"> 
+  
+    <form action="/create_info" method="POST">
+
+    <div class="form-group">
+        <input type="hidden" value="<%=@summoner.id%>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="summonerId">
+        <label for="exampleTextarea">내용</label>
+        <textarea class="form-control" id="exampleTextarea" rows="10" name="summonerInfo" placeholder="이 소환사의 정보를 입력해주세요."></textarea>
+    </div>
+       
+      <button type="submit" class="btn btn-primary" data-confirm="허위 사실 게재시 불이익은 없습니다..ㅎ_ㅎ">올리기</button>
+      <button type="button" class="btn btn-primary" onclick='location.href="/toprank/index"'>홈화면가기</button>
+    </form>
+       
+          
+</div>

@@ -1,0 +1,18 @@
+<div class="container my-5"> 
+  
+    <form action="/update_info/<%=@infoId %>" method="POST">
+
+    <div class="form-group">
+        
+        <label for="exampleTextarea">내용</label>
+        <input type="hidden" value="<%=@summonerId%>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="summonerId">
+        <textarea class="form-control" id="exampleTextarea" rows="10" name="summonerInfo"><%=@info%></textarea>
+    </div>
+       
+      <button type="submit" class="btn btn-primary" data-confirm="허위 사실 게재시 불이익은 없습니다..ㅎ_ㅎ">수정하기</button>
+      <button type="button" class="btn btn-primary" onclick='location.href="/toprank/index"'>홈화면가기</button>
+      
+    </form>
+       
+          
+</div>
